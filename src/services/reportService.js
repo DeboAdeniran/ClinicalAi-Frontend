@@ -1,0 +1,12 @@
+import api from './api';
+export const getDashboardStats = () => api.get('/reports/dashboard');
+export const getRiskDistribution = () => api.get('/reports/risk-distribution');
+export const getHighRiskPatients = () => api.get('/reports/high-risk-patients');
+export const getAssessmentActivity = () => api.get('/reports/assessment-activity');
+export const listGuidelines = (params) => api.get('/guidelines', { params });
+export const getGuideline = (id) => api.get(`/guidelines/${id}`);
+export const listAuditLogs = (params) => api.get('/audit', { params });
+export const getDecisionTrace = (predictionId) => api.get(`/audit/trace/${predictionId}`);
+export const listUsers = (params) => api.get('/users', { params });
+export const createUser = (d) => api.post('/users', d);
+export const updateUser = (id, d) => api.put(`/users/${id}`, d);
